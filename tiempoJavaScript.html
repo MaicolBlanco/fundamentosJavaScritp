@@ -1,0 +1,53 @@
+<!-- Cómo funciona el tiempo en JavaScript
+
+En principio, cualquier tarea que se haya delegado al navegador 
+a través de un callback, deberá esperar hasta que todas las 
+instrucciones del programa principal se hayan ejecutado. 
+Por esta razón el tiempo de espera definido en funciones como 
+setTimeout, no garantizan que el callback se ejecute en ese 
+tiempo exactamente, sino en cualquier momento a partir de allí, 
+sólo cuando la cola de tareas se haya vaciado.   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //console.log('a');
+        /* Si queremos que console.log('b') lo ejecute despues de 2 segundos
+        usamos "setTimeout" pero primero creamos un array function para que
+        entre primero el tiempo si no se hiciera esto, se ejecuta directamente 
+        el console.log('b')*/
+        //setTimeout(() => console.log('b'), 2000);     
+        //console.log('c');
+
+        /* Un ejemplo de como funciona la ejecucion dentro de jS */
+        // console.log(1);
+        // setTimeout(() => console.log(2), 0);     
+        // console.log(3);
+
+        setTimeout(() => console.log('d'), 2000);
+        for (let i = 0; i < 10000000000; i++) {            
+        }
+    </script>
+</body>
+</html>
+
+<!-- Manejando el Orden y el Asincronismo en JavaScript
+Una manera de asegurar que se respete la secuencia en que hemos realizado múltiples 
+tareas es utilizando callbacks, con lo que se ejecutará luego, en cada llamada. 
+Lo importante es que el llamado al callback se haga a través de una función anónima. 
+Sin embargo, al hacerlo de esta manera generamos una situación poco deseada llamada 
+CallbackHell. -->
+
+<!-- Promesas
+En esta clase veremos las promesas, que son valores que aun no conocemos. 
+Las promesas tienen tres estados:
+
+pending
+fullfilled
+rejected -->
